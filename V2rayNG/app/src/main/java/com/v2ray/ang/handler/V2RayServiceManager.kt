@@ -86,7 +86,7 @@ object V2RayServiceManager {
      * Gets the name of the currently running server.
      * @return The name of the running server.
      */
-    fun getRunningServerName() = currentConfig?.remarks.orEmpty()
+    fun getRunningServerName() = currentConfig?.remarks?.takeIf { it.isNotEmpty() } ?: "gobling"
 
     /**
      * Starts the context service for V2Ray.
